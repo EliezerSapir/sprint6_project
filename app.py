@@ -4,7 +4,7 @@ import plotly.express as px
 
 df = pd.read_csv('vehicles_us.csv')
 
-st.header('Exploration of car sales over the years', divider='rainbow')
+st.header('Exploration of car sales over the years')
 
 st.subheader('Model Year vs Price')
 st.write('Older cars and newer cars sell for the highest price. Car models from 1974-2013 sell on average for less than 15K dollars.')
