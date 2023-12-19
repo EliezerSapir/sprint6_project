@@ -5,6 +5,7 @@ import plotly.express as px
 df = pd.read_csv('vehicles_us.csv')
 
 st.header('Exploration of car sales over the years')
+# wanted to add , divider='rainbow'
 
 st.subheader('Model Year vs Price')
 st.write('Older cars and newer cars sell for the highest price. Car models from 1974-2013 sell on average for less than 15K dollars.')
@@ -33,25 +34,26 @@ st.plotly_chart(fig)
 st.subheader('What can you expect to pay for a car from the year (in $):')
 choice = st.checkbox('1960')
 if choice:
-    st.write(df[df['model_year'] == 1960]['price'].mean())
+    st.write(round(df[df['model_year'] == 1960]['price'].mean()))
 choice2 = st.checkbox('1970')
 if choice2:
-    st.write(df[df['model_year'] == 1970]['price'].mean())
+    st.write(round(df[df['model_year'] == 1970]['price'].mean()))
 choice3 = st.checkbox('1980')
 if choice3:
-    st.write(df[df['model_year'] == 1980]['price'].mean())
+    st.write(round(df[df['model_year'] == 1980]['price'].mean()))
 choice4 = st.checkbox('1990')
 if choice4:
-    st.write(df[df['model_year'] == 1990]['price'].mean())
+    st.write(round(df[df['model_year'] == 1990]['price'].mean()))
 choice5 = st.checkbox('2000')
 if choice5:
-    st.write(df[df['model_year'] == 2000]['price'].mean())
+    st.write(round(df[df['model_year'] == 2000]['price'].mean()))
 choice6 = st.checkbox('2010')
 if choice6:
-    st.write(df[df['model_year'] == 2010]['price'].mean())
+    st.write(round(df[df['model_year'] == 2010]['price'].mean()))
 choice7 = st.checkbox('2019')
 if choice7:
-    st.write(df[df['model_year'] == 2019]['price'].mean())
+    st.write(round(df[df['model_year'] == 2019]['price'].mean()))
 
 year = st.slider('Check a specific year', 1960, 2019, 1960)
-st.write("That will be ", df[df['model_year'] == year]['price'].mean(), 'dollars')
+
+st.write('You can expect to pay $', round(df[df['model_year'] == year]['price'].mean()), 'for a car from', year)
